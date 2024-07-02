@@ -1,4 +1,12 @@
-import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../actions/types';
+import {
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT
+} from '../actions/types';
 
 const initialState = {
   token: localStorage.getItem('token'),
@@ -7,7 +15,7 @@ const initialState = {
   user: null,
 };
 
-export default function (state = initialState, action) {
+function authReducer(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
@@ -42,3 +50,5 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+export default authReducer;
