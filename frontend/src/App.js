@@ -7,14 +7,14 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import Navbar from './components/Navbar.js';
 
 const App = () => (
-  <Router>
+  <>
     <Navbar/>
     <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<PrivateRoute component={Dashboard} />} />
     </Routes>
-  </Router>
+  </>
 );
 
 export default App;
